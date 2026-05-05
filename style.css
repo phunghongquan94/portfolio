@@ -301,27 +301,9 @@ html { font-size: calc(var(--frame-h) * 0.022); }
   filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5)); /* Thêm bóng đổ để tách khỏi nền */
 }
 
-/* RESPONSIVE & ANIMATIONS */
 @media (max-width: 768px) and (orientation: portrait) {
   .mobile-rotate-warning { display: block !important; }
   .screen, .side-menu { display: none !important; }
-}
-
-@media (max-width: 900px) and (orientation: landscape) {
-  .skills-wrapper { padding-bottom: 4%; }
-  .skills-row { gap: 0.5vw; }
-  .skill-box { width: calc(var(--frame-h) * 0.22); } 
-  .custom-gallery-grid { 
-    grid-template-rows: repeat(5, minmax(0, 1fr)); 
-    grid-template-areas: 
-      "title title img1" "img2 img3 img1" "img2 img4 img5" "img6 img6 img6" "img7 img7 img8"; 
-  }
-  .s4-container { padding-bottom: 6vh; gap: 2vw; }
-  .s4-card { width: 26%; }
-}
-
-@media (max-width: 900px), (max-height: 700px) {
-  .water-container, .gallery-gooey-container { filter: url("#blob-mobile"); }
 }
 
 @keyframes slideUpIn { 0% { transform: translateY(120vh) scale(0.9); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
