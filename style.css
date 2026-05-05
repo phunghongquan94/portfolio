@@ -1,0 +1,379 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --frame-h: min(95vh, 95vw * 9 / 16);
+  --menu-item-size: calc(var(--frame-h) * 0.085); 
+  --menu-pad: calc(var(--frame-h) * 0.015);       
+  --menu-icon-size: calc(var(--menu-item-size) * 0.45); 
+  
+  --color-cream: #f8f3e3;  
+  --color-peach: #e98e6c;  
+  --color-teal: #65b0b2;   
+  --color-dark-teal: #327181; 
+  --color-soft-teal: #e8f5f4; 
+  --color-liquid: #4f9594; 
+  
+  --flask-border: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74.79 99.01'><path fill='%23faf7e4' d='M43.35,90.85c-1.15,0-2.18-.79-2.44-1.96-.3-1.35.55-2.68,1.9-2.98,5.49-1.22,10.46-4.33,14.01-8.76.86-1.08,2.44-1.25,3.51-.39,1.08.86,1.25,2.44.39,3.51-4.25,5.31-10.23,9.04-16.82,10.51-.18.04-.37.06-.55.06Z'/><circle fill='%23faf7e4' cx='62.1' cy='72.82' r='2.5'/><path fill='%234f9594' d='M37.4,99C16.78,99,0,82.15,0,61.45c0-14.42,8.46-27.72,21.56-33.88,1.49-.7,2.45-2.18,2.45-3.83v-9.4c-3.53-1.23-5.85-5.01-4.69-8.95.97-3.26,4.11-5.39,7.51-5.39h21.48c3.89,0,7.23,3.23,7.45,7.19v.11c0,3.27-2.04,6.04-4.99,7.05v9.52c0,1.66.99,3.15,2.5,3.85,13.07,6.07,21.52,19.37,21.52,33.89,0,20.62-16.78,37.4-37.4,37.4h.01ZM26.78,4c-1.61,0-3.14.98-3.62,2.52-.63,2.07.93,4.05,3.01,4.22h0c1.04.09,1.83.95,1.83,1.99v11.01c0,3.21-1.88,6.09-4.78,7.46C11.53,36.71,3.98,48.58,3.98,61.45c0,18.5,14.98,33.55,33.4,33.55s33.4-14.98,33.4-33.4c0-12.99-7.56-24.88-19.25-30.29h0c-2.89-1.34-4.76-4.26-4.76-7.45v-11.13c0-1.04.8-1.91,1.84-1.99h0c1.78-.15,3.12-1.6,3.15-3.38-.12-1.63-1.52-3.36-3.46-3.36h-21.53.01Z'/></svg>");
+  --flask-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74.8 99'><path fill='black' d='M37.4,96c-19,0-34.4-15.5-34.4-34.5s7.8-25.5,19.8-31.2c2.6-1.2,4.2-3.8,4.2-6.6v-11c0-.5-.4-.9-.9-1-1.3-.1-2.6-.8-3.3-1.9-.7-1.1-.9-2.4-.5-3.6.6-1.9,2.5-3.2,4.6-3.2h21.5c2.6,0,4.3,2.2,4.5,4.3,0,2.4-1.8,4.3-4.1,4.5-.5,0-.9.5-.9,1v11.1c0,2.8,1.6,5.4,4.2,6.5,12,5.6,19.8,17.8,19.8,31.2,0,19-15.4,34.4-34.4,34.4Z'/></svg>");
+}
+
+body, html {
+  margin: 0; padding: 0; width: 100%; height: 100%;
+  background-color: var(--color-cream);
+  background-image: radial-gradient(at 10% 10%, rgba(233, 142, 108, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 90% 10%, rgba(101, 176, 178, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 10% 90%, rgba(101, 176, 178, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 90% 90%, rgba(233, 142, 108, 0.15) 0px, transparent 50%),
+                    linear-gradient(-45deg, var(--color-cream), #faf9f6);
+  background-size: 400% 400%; animation: gradientOrganic 20s ease-in-out infinite;
+  
+  /* ĐÃ THAY ĐỔI FONT SANG SN PRO Ở ĐÂY */
+  font-family: "SN Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  
+  touch-action: none; overflow: hidden; position: relative;
+}
+
+@keyframes gradientOrganic { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+html { font-size: calc(var(--frame-h) * 0.022); }
+
+.mobile-rotate-warning { display: none !important; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: 999999; background-image: linear-gradient(-45deg, var(--color-cream), #faf9f6); }
+
+/* SIDE MENU */
+.side-menu { position: fixed; right: 1.5vw; top: 50%; transform: translateY(-50%); padding: var(--menu-pad); display: flex; flex-direction: column; z-index: 10000; }
+.side-menu-bg { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 999px; z-index: 0; }
+.active-indicator { position: absolute; width: var(--menu-item-size); height: var(--menu-item-size); background: var(--color-liquid); border-radius: 50%; top: var(--menu-pad); left: var(--menu-pad); z-index: 1; pointer-events: none; transform: translateY(var(--y, 0)) scale(var(--s, 1)); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+.active-indicator.echo-1 { --s: 0.65; opacity: 0.4; transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) 0.06s; }
+.active-indicator.echo-2 { --s: 0.35; opacity: 0.2; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.12s; }
+.menu-btn { width: var(--menu-item-size); height: var(--menu-item-size); margin: 0; padding: 0; border: none; background: transparent; cursor: pointer; position: relative; display: flex; justify-content: center; align-items: center; }
+.menu-btn::before { content: attr(data-title); position: absolute; right: calc(100% + (var(--menu-pad) * 2)); top: 50%; transform: translateY(-50%) translateX(1.5rem); background-color: #ed9661; border-radius: 999px; padding: 0.6rem 1.5rem; color: #ffffff; font-family: "SN Pro"; font-size: 1.05rem; font-weight: 800; white-space: nowrap; pointer-events: none; opacity: 0; visibility: hidden; z-index: 1; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0.4rem 1rem rgba(237, 150, 97, 0.4); }
+.menu-btn:hover::before { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); }
+.menu-btn img { width: var(--menu-icon-size); height: var(--menu-icon-size); filter: brightness(0); opacity: 0.35; position: relative; z-index: 2; transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.menu-btn:hover img { opacity: 1; transform: scale(1.15); }
+.menu-btn.active img { opacity: 1; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+/* SCREEN SETTINGS */
+.screen { position: absolute; inset: 0; margin: auto; aspect-ratio: 16 / 9; width: 95vw; max-width: calc(95vh * (16 / 9)); max-height: 95vh; border-radius: 1.5rem; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.2) 0px 13px 27px -5px; display: flex; justify-content: center; align-items: center; visibility: hidden; z-index: 1; }
+.screen.active { visibility: visible; z-index: 10; }
+#sec-0 { background: transparent; } 
+#sec-2 { background: #F3E4CA; } 
+
+/* SCREEN 1: SPLIT SLIDER */
+.split-slider { position: relative; width: 100%; height: 100%; overflow: hidden; cursor: ew-resize; --position: 50%; --px: 0px; --py: 0px; }
+.split-layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+.layer-after { clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%); }
+.static-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.main-img { position: absolute; bottom: -2.5%; left: 50%; height: 105%; width: auto; object-fit: contain; translate: calc(-50% + var(--px)) var(--py); transition: translate 0.1s ease-out; animation: gentleFloat 6s ease-in-out infinite; }
+@keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2vh); } }
+
+/* SCREEN 2: SKILLS */
+.skills-wrapper { display: flex; justify-content: center; align-items: flex-end; padding-bottom: 5%; width: 100%; height: 100%; position: relative;  z-index: 2; }
+.skills-row { display: flex; flex-direction: row; justify-content: center; align-items: flex-end; gap: 0.8vw; width: 95%; }
+.skill-box { width: calc(var(--frame-h) * 0.18); aspect-ratio: 74.79 / 99; position: relative; opacity: 0; transition: opacity 0.5s ease; cursor: pointer; }
+
+/* =========================================
+   NỀN 3 LỚP SCREEN 2 (SKILLS)
+========================================= */
+.s2-bg-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Cho nằm sát đáy screen */
+  pointer-events: none; /* Rất quan trọng: Xuyên chuột để không chặn hover bình hóa học */
+  overflow: hidden;
+}
+
+/* Định dạng chung cho cả 3 lớp */
+.s2-bg-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hoặc đổi thành 'contain' tùy thuộc vào cách bạn thiết kế ảnh */
+}
+
+.s2-bg-middle-1 {
+  animation: floatS2Middle1 4s ease-in-out infinite;
+}
+@keyframes floatS2Middle1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3vh); } 
+}
+
+.s2-bg-middle-2 {
+  transform-origin: bottom left;
+  animation: floatS2Middle2 5s ease-in-out infinite;
+}
+@keyframes floatS2Middle2 {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); } 
+}
+
+/* MOUSE TOOLTIP */
+.mouse-tooltip { position: fixed; top: 0; left: 0; background-color: #ed9661; color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 0.4rem; font-family: inherit; font-size: 0.9rem; font-weight: bold; white-space: nowrap; pointer-events: none; opacity: 0; visibility: hidden; z-index: 999999; box-shadow: 0 0.3rem 0.6rem rgba(237, 150, 97, 0.3); transform: translate(-50%, -100%); transition: opacity 0.2s ease, visibility 0.2s ease; will-change: left, top; }
+.mouse-tooltip.show { opacity: 1; visibility: visible; }
+.mouse-tooltip::after { display: none !important; }
+
+.flask-fill { position: absolute; inset: 0; background-color: #faf7e4; -webkit-mask: var(--flask-mask) no-repeat center / 100% 100%; mask: var(--flask-mask) no-repeat center / 100% 100%; z-index: 0; }
+.flask-border { position: absolute; inset: 0; background-image: var(--flask-border); background-repeat: no-repeat; background-position: center; background-size: 100% 100%; z-index: 5; pointer-events: none; }
+.water-container { position: absolute; inset: 0; -webkit-mask: var(--flask-mask) no-repeat center / 100% 100%; mask: var(--flask-mask) no-repeat center / 100% 100%; filter: url("#blob"); z-index: 1; }
+.liquid-wrapper { position: absolute; left: 0; width: 100%; height: 100%; top: 100%; transition: top 2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.skill-box.filled .liquid-wrapper { top: calc(100% - (var(--level) * 0.8)); }
+.liquid-base { position: absolute; top: 0; left: 0; right: 0; bottom: -2.5rem; background: var(--color-liquid); }
+.bubble { position: absolute; top: 0; left: var(--position); background: var(--color-liquid); border-radius: 50%; animation: bubble-size var(--time) ease-in infinite var(--delay), bubble-move var(--time) ease-in infinite var(--delay); }
+@keyframes bubble-size { 0%, 75% { width: var(--size); height: var(--size); } 100% { width: 0; height: 0; } }
+@keyframes bubble-move { 0% { transform: translate(-50%, 2.5rem); } 100% { transform: translate(-50%, calc(var(--distance) * -1)); } }
+.skill-icon { position: absolute; bottom: 17%; left: 0; right: 0; margin: 0 auto; width: 50%; aspect-ratio: 1 / 1; object-fit: contain; filter: invert(53%) sepia(16%) saturate(1066%) hue-rotate(133deg) brightness(95%) contrast(88%); mix-blend-mode: multiply; z-index: 10; }
+
+/* SCREEN 3: GALLERY */
+.gallery-wrapper { width: 100%; height: 100%; padding: 1.5rem; }
+.grid-item { width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.anim-item { opacity: 0; }
+
+.item-1 { grid-area: img1; } .item-2 { grid-area: img2; } .item-3 { grid-area: img3; } 
+.item-4 { grid-area: img4; } .item-5 { grid-area: img5; } .item-6 { grid-area: img6; }
+.item-7 { grid-area: img7; } .item-8 { grid-area: img8; }
+
+.custom-gallery-grid { 
+  display: grid; gap: 1rem; width: 100%; height: 100%; 
+  grid-template-columns: repeat(4, minmax(0, 1fr)); 
+  grid-template-rows: repeat(3, minmax(0, 1fr)); 
+  grid-template-areas: 
+    "title img1 img1 img2" 
+    "title img3 img4 img8" 
+    "img5  img7 img4 img6"; 
+}
+
+.item-title { grid-area: title; position: relative; overflow: visible; animation: floatTitle 4s ease-in-out infinite; cursor: pointer; } 
+.item-title img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Cấu hình chung cho cả 2 ảnh: Chồng lên nhau */
+.title-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  /* Bổ sung thêm 'filter' vào quá trình chuyển đổi (0.5s) */
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Ảnh 1 ban đầu hiện, độ sáng bình thường */
+.title-front { 
+  z-index: 2; 
+  opacity: 1; 
+  transform: scale(1); 
+  filter: brightness(1) contrast(1); 
+}
+
+/* Ảnh 2 ban đầu ẩn, đặt sẵn trạng thái 'cháy sáng' để lúc xuất hiện sẽ mượt hơn */
+.title-back { 
+  z-index: 1; 
+  opacity: 0; 
+  transform: scale(0.95); 
+  filter: brightness(3) contrast(2) saturate(2); 
+}
+
+/* =========================================
+   TRẠNG THÁI KHI BỊ CLICK (Được JS thêm class 'swapped')
+========================================= */
+/* Ảnh 1 mờ đi, phình to và NHÁY SÁNG CHÓI (Burn effect) */
+.item-title.swapped .title-front {
+  opacity: 0;
+  transform: scale(1.05);
+  filter: brightness(3) contrast(2) saturate(2);
+  pointer-events: none;
+}
+
+/* Ảnh 2 hiện rõ lên, khôi phục độ sáng về mức bình thường */
+.item-title.swapped .title-back {
+  opacity: 1;
+  transform: scale(1);
+  filter: brightness(1) contrast(1);
+  z-index: 3;
+}
+.title-notify {
+  position: absolute;
+  top: 0;   /* Nhô lên trên 5% */
+  left: 50%; /* Nhô sang phải 5% */
+  width: 70%; /* Kích thước ảnh thông báo so với ảnh Title */
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* Hiệu ứng nảy và xoay nhẹ khi hiện ra */
+  transform: translate(-50%, 90%) scale(0.5) rotate(10deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Kích hoạt khi hover vào khối Title */
+.item-title:hover .title-notify {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 50%) scale(1) rotate(0deg);
+}
+
+.title-notify img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* Thêm bóng đổ để ảnh thông báo nổi bật hơn */
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+}
+
+@keyframes floatTitle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1rem); } 
+}
+
+.gallery-item { display: block; width: 100%; height: 100%; position: relative; overflow: hidden; background: rgba(0,0,0,0.05); border-radius: 1rem; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+.gallery-overlay { position: absolute; inset: 0; padding: 1.5rem; display: flex; align-items: flex-end; background: transparent; z-index: 2; }
+.gallery-overlay h3 { color: #fff; margin: 0; font-weight: bold; font-size: 1.5rem; opacity: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.gallery-item:hover .gallery-overlay h3 { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+.gallery-gooey-container { position: absolute; inset: 0; filter: url("#blob"); z-index: 1; pointer-events: none; --color-liquid: #df9b69; opacity: 0; transition: opacity 0.4s ease; }
+.gallery-gooey-container .liquid-wrapper { position: absolute; left: 0; width: 100%; height: 100%; top: 120%; transition: top 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.gallery-item:hover .gallery-gooey-container { opacity: 1; }
+.gallery-item:hover .gallery-gooey-container .liquid-wrapper { top: calc(100% - 5rem); }
+
+/* SCREEN 4: BURN CARDS 3D & CURSOR IMAGE */
+#sec-3 { background: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/1d7987164680747.69f8434d740aa.jpg') center/cover no-repeat, #1a1a1a !important; }
+
+#s4-cursor-img {
+  position: absolute; top: 0; left: 0; height: 100%; width: auto; z-index: 10; pointer-events: none; 
+  transform: translate(calc(var(--mx, 0px) - 62.5%), calc(var(--my, 0px) - 100%));
+  opacity: 0;
+  transition: transform 0.15s ease-out, opacity 0.3s ease;
+}
+
+.s4-container { display: flex; justify-content: center; align-items: flex-end; padding-bottom: 4rem; gap: 4vw; width: 100%; height: 100%; }
+.s4-card { position: relative; width: 22%; aspect-ratio: 3 / 4; }
+
+.s4-shadow {
+  position: absolute; inset: 0; background-color: #B24015; opacity: 0.3; border-radius: 1.5rem; z-index: 1; pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.s4-wrapper { position: relative; width: 100%; height: 100%; z-index: 2; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.s4-inner { position: relative; width: 100%; height: 100%; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+.s4-front, .s4-back { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity 0.5s ease, filter 0.5s ease; }
+.s4-front { z-index: 2; }
+.s4-front img, .s4-back img { width: 100%; height: 100%; object-fit: cover; }
+
+.s4-card:hover .s4-wrapper { transform: translateY(-60px); }
+.s4-card:hover .s4-shadow { opacity: 0.4; }
+
+/* =========================================
+   THÔNG BÁO COPY THÀNH CÔNG (SCREEN 4)
+========================================= */
+#copy-notify {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50% ) scale(0.5); /* Thu nhỏ và ẩn lúc đầu */
+  height: 30%; /* Chiều cao bằng 20% chiều cao screen hiện tại */
+  z-index: 999999; /* Luôn nổi lên trên cùng */
+  pointer-events: none; /* Không cản trở click chuột */
+  opacity: 0;
+  visibility: hidden;
+  /* Hiệu ứng nảy (bouncy) khi hiện ra */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Class kích hoạt khi bấm copy */
+#copy-notify.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%) scale(1);
+}
+
+#copy-notify img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5)); /* Thêm bóng đổ để tách khỏi nền */
+}
+
+/* RESPONSIVE & ANIMATIONS */
+@media (max-width: 768px) and (orientation: portrait) {
+  .mobile-rotate-warning { display: block !important; }
+  .screen, .side-menu { display: none !important; }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .skills-wrapper { padding-bottom: 4%; }
+  .skills-row { gap: 0.5vw; }
+  .skill-box { width: calc(var(--frame-h) * 0.22); } 
+  .custom-gallery-grid { 
+    grid-template-rows: repeat(5, minmax(0, 1fr)); 
+    grid-template-areas: 
+      "title title img1" "img2 img3 img1" "img2 img4 img5" "img6 img6 img6" "img7 img7 img8"; 
+  }
+  .s4-container { padding-bottom: 6vh; gap: 2vw; }
+  .s4-card { width: 26%; }
+}
+
+@media (max-width: 900px), (max-height: 700px) {
+  .water-container, .gallery-gooey-container { filter: url("#blob-mobile"); }
+}
+
+@keyframes slideUpIn { 0% { transform: translateY(120vh) scale(0.9); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+@keyframes pushBackOut { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(0.85); opacity: 0.6; } }
+@keyframes slideDownOut { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(120vh); opacity: 0; } }
+@keyframes pullForwardIn { 0% { transform: scale(0.85); opacity: 0.6; } 100% { transform: scale(1); opacity: 1; } }
+
+.slide-up-in { animation: slideUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.push-back-out { animation: pushBackOut 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.slide-down-out { animation: slideDownOut 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.pull-forward-in { animation: pullForwardIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes dropBounce {
+  0% { transform: translateY(-4rem); animation-timing-function: ease-in; }
+  35% { transform: translateY(0); animation-timing-function: ease-out; }
+  55% { transform: translateY(-1.5rem); animation-timing-function: ease-in; }
+  75% { transform: translateY(0); animation-timing-function: ease-out; }
+  85% { transform: translateY(-0.5rem); animation-timing-function: ease-in; }
+  95% { transform: translateY(0); animation-timing-function: ease-out; }
+  100% { transform: translateY(0); }
+}
+.drop-bounce-anim { animation: dropBounce 0.8s forwards !important; transform-origin: center bottom !important; }
+
+@keyframes weebleWobble {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-12deg); }
+  30% { transform: rotate(10deg); }
+  45% { transform: rotate(-6deg); }
+  60% { transform: rotate(4deg); }
+  75% { transform: rotate(-2deg); }
+}
+.skill-box.wobble-anim { animation: weebleWobble 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important; transform-origin: center bottom !important; }
+
+/* FANCYBOX OVERRIDES */
+.fancybox__container { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important; z-index: 9999 !important; border-radius: 1.5rem !important; overflow: hidden !important; }
+.fancybox__backdrop { position: absolute !important; }
+
+.fancybox__container .f-image { width: 100vw !important; height: 100vh !important; max-width: 100% !important; max-height: 100% !important; object-fit: contain !important; margin: 0 !important; padding: 0 !important; }
+
+.fancybox__container .fancybox__content {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  padding: 0 !important; /* Xóa khoảng trống quanh video nếu muốn tràn viền */
+}
+
+/* Đảm bảo khung video và iframe bên trong nở to hết cỡ */
+.fancybox__container .f-video,
+.fancybox__container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 1rem; /* Tùy chọn: Bo góc cho video nhìn mượt hơn */
+  border: none !important;
+}

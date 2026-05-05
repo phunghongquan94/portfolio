@@ -1,53 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="2; URL=about.html">
-    <title>Portfolio</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Phùng Hồng Quân</title>
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- fancy box -->
-    <link rel="stylesheet" href="css/fancybox.css">
-    <script src="js/fancybox.umd.js"></script>
-    <!-- cursos -->
-    <link rel="stylesheet" href="css/cursor.css">
-    <!-- Me -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bgcolor2">
-    <div class="loadpage">
-        <div class="lds-roller">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-</body>
+<body>
 
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/46224a164680747.69fa0b5783aa0.png" class="mobile-rotate-warning" alt="Vui lòng xoay ngang điện thoại">
+
+<nav class="side-menu">
+  <div class="side-menu-bg"></div>
+  
+  <div class="active-indicator echo-2"></div>
+  <div class="active-indicator echo-1"></div>
+  <div class="active-indicator" id="menuIndicator"></div>
+  
+  <button class="menu-btn active" data-target="0" data-title="About Me">
+    <img src="menu/icon1.svg" alt="Home">
+  </button>
+  <button class="menu-btn" data-target="1" data-title="Softwares">
+    <img src="menu/icon2.svg" alt="Skills">
+  </button>
+  <button class="menu-btn" data-target="2" data-title="Project">
+    <img src="menu/icon3.svg" alt="Gallery">
+  </button>
+  <button class="menu-btn" data-target="3" data-title="Contact">
+    <img src="menu/icon4.svg" alt="Contact">
+  </button>
+</nav>
+
+<section class="screen active" id="sec-0">
+  <div class="split-slider" id="splitSlider">
+    <div class="split-layer">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/75fe29164680747.69f76110acdeb.jpg" class="static-bg" alt="BG 2">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/524ddb164680747.69f9bf933b760.png" class="main-img" alt="Main 2">
+    </div>
+    <div class="split-layer layer-after">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/c0d6cd164680747.69f76110ac353.jpg" class="static-bg" alt="BG 1">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/6994cd164680747.69f76110ad7fc.png" class="main-img" alt="Main 1">
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="sec-1">
+    <div class="s2-bg-container">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/6ad866164680747.69f89114a0b9d.jpg" class="s2-bg-layer s2-bg-bottom">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d85f34164680747.69f891149fba6.png" class="s2-bg-layer s2-bg-middle-1">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b7676a164680747.69f89114a05d5.png" class="s2-bg-layer s2-bg-middle-2">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/0b3a66164680747.69f89114a00a4.png" class="s2-bg-layer s2-bg-top">
+    </div>
+  <div class="skills-wrapper">
+    <div class="skills-row">
+      <div class="skill-box anim-skill" style="--level: 90%;" data-tooltip="Photoshop">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon1.svg" alt="Skill 1" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 75%;" data-tooltip="Adobe Illustrator">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon2.svg" alt="Skill 2" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 65%;" data-tooltip="Premiere">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon3.svg" alt="Skill 3" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 60%;" data-tooltip="After Effects">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon4.svg" alt="Skill 4" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 40%;" data-tooltip="Substance 3D Painter">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon5.svg" alt="Skill 5" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 70%;" data-tooltip="Blender">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon6.svg" alt="Skill 6" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 80%;" data-tooltip="Clip Studio Paint">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon7.svg" alt="Skill 7" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 50%;" data-tooltip="Excel">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon8.svg" alt="Skill 8" class="skill-icon">
+      </div>
+      <div class="skill-box anim-skill" style="--level: 70%;" data-tooltip="PowerPoint">
+        <div class="flask-fill"></div><div class="flask-border"></div><div class="water-container"></div>
+        <img src="skill/icon9.svg" alt="Skill 9" class="skill-icon">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="sec-2">
+  <div class="gallery-wrapper">
+    <div class="custom-gallery-grid">
+      <div class="grid-item item-title">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/4b3b33164680747.69f8ac1ea0dd0.png" class="title-layer title-front" alt="My Projects">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/830cb0164680747.69fa08e015f62.png" class="title-layer title-back" alt="My Projects 2">
+        <div class="title-notify">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/2f96b5164680747.69f9b566714e6.png" alt="Title Info">
+        </div>
+      </div>
+      <div class="grid-item anim-item item-1">
+        <a data-fancybox="album1" href="https://www.youtube.com/watch?v=C1Siiy2NeaY&feature=youtu.be" data-caption="<b>Livestream:</b> quay dựng, chuẩn bị thành phần cho các buổi phát trực tuyến(Grab360, GrabTalk, GrabTV, Hái lộc đầu năm,... trung bình 10-15 buổi livestream/năm)" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/6a5228164680747.69f76be8c8ea3.jpg">
+          <div class="gallery-overlay"><h3>Livestream</h3></div>
+        </a>
+        <a data-fancybox="album1" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/163a30164680747.69f76be8c94ad.jpg" data-caption="Bố trí và quản lý các buổi phát trực tuyến" style="display:none;"></a>
+        <a data-fancybox="album1" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/006ee7164680747.69f773ce835c1.jpg" style="display:none;"></a>
+        <a data-fancybox="album1" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/40b01c164680747.69f8c26a7b899.jpg" style="display:none;"></a>
+        <a data-fancybox="album1" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/342705164680747.69f8c8eea3a68.jpg" style="display:none;"></a>
+        <a data-fancybox="album1" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/f5e954164680747.69f8c8eea4591.jpg" style="display:none;"></a>
+      </div>
+
+      <div class="grid-item anim-item item-2">
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/c10f08164680747.69f8137941b92.jpg" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/612593164680747.69f9656d6ace9.jpg">
+          <div class="gallery-overlay"><h3>Brand Colab</h3></div>
+        </a>
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/727022164680747.69f81379455cf.jpg" style="display:none;"></a>
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/bf54d9164680747.69f813794298c.jpg" style="display:none;"></a>
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9ac54f164680747.69f8137943389.jpg" style="display:none;"></a>
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ae19eb164680747.69f96703b42ea.jpg" style="display:none;"></a>
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/7f05ec164680747.69f8137942533.jpg" style="display:none;"></a>
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/0ef0f4164680747.69f8137944fc5.jpg" style="display:none;"></a>
+        <a data-fancybox="album2" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/2c5104164680747.69f9676115247.jpg" style="display:none;"></a>
+      </div>
+
+      <div class="grid-item anim-item item-3">
+        <a data-fancybox="album3" href="https://www.youtube.com/watch?v=viK5PioDIIU" data-caption="Điều ước sau tay lái" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9ad32e164680747.69f8161c8adcd.jpg">
+          <div class="gallery-overlay"><h3>Daily tasks</h3></div>
+        </a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/badb23164680747.69f8137942e49.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/15df58164680747.69f81379420a0.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/2924eb164680747.69f81379438e5.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/515e7a164680747.69f813794448f.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/85dcf0164680747.69f8137944997.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/1bb3cd164680747.69f819ce6ce8d.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/8bff1e164680747.69f994074c84a.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/cd753a164680747.69f994074cc1e.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/f6cc85164680747.69f9b06869589.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/8bcab2164680747.69f994074d420.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e66f48164680747.69f994074d7a7.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cf3b5a164680747.69f994074d010.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ca7c26164680747.63fb2ff059839.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/f6e272164680747.63fb2ff05c1cd.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9d1ed2164680747.63fb4afb1bbe2.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/119ede164680747.63fb48347c604.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/fc35ab164680747.63fb483472843.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/206294164680747.63fb48348bc39.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/12c16a164680747.69f9b426bef55.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ec895f164680747.69f9b426bf7fc.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/fcd4c6164680747.69f9b426beb33.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9638fd164680747.69f9b426bf3dd.jpg" style="display:none;"></a>
+        <a data-fancybox="album3" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/7518ec164680747.69f9b426be692.jpg" style="display:none;"></a>
+      </div>
+
+      <div class="grid-item anim-item item-4">
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/aca943164680747.69f6b040ef8a3.png" data-caption="<b>Ngày hội Tài xế công nghệ:</b> Xây dựng concept cho chương trình từ 2021 đến 2025" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/155c01164680747.69f6b040ee5ef.jpg">
+          <div class="gallery-overlay"><h3>Ngày hội Tài xế</h3></div>
+        </a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/c61487164680747.69f7dc4a1d5d9.jpg" data-caption="Chương trình con bên trong chuỗi chương trình" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/7bb4b7164680747.69f7dc4a1bea1.jpg" data-caption="Chương trình con bên trong chuỗi chương trình" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/329b3d164680747.69f7dc4a1ce7d.jpg" data-caption="Nhân sự thiết kế trong team thực hiện theo concept chính" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/93bca0164680747.69f7dc4a1c683.jpg" data-caption="Nhân sự thiết kế trong team thực hiện theo concept chính" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/72b886164680747.69f7e451c0ca0.png" data-caption="Lên thiết kế chi tiết để thi công" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/5f0149164680747.69f7e451c1236.png" data-caption="Lên thiết kế chi tiết để thi công" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d978cc164680747.69f752f18cf13.jpg" data-caption="Lên thiết kế chi tiết để thi công" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/15b72e164680747.69f6b040eeaa0.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2025" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/51e798164680747.69f6b040eef06.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2025" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/6ffcc1164680747.69f7f179505db.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2024" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/63a103164680747.69f7524385e03.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2024" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/6597fd164680747.69f7524386c10.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2024" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/cebfd1164680747.69f75243856fe.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2024" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/bb3455164680747.69f7631a568e5.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2023" style="display:none;"></a>
+        <a data-fancybox="album4" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ed7cc0164680747.69f7f17950af9.jpg" data-caption="Ngày hội Tài xế công nghệ năm 2023" style="display:none;"></a>
+      </div>
+
+      <div class="grid-item anim-item item-5">
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9df7d5164680747.69f7746ab6e43.jpg" data-caption="<b>Ngày hội gia đình:</b> Xây dựng, lên ý tưởng cho chương trình từ 2022 đến 2025" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/7e336c164680747.69f790132b104.jpg">
+          <div class="gallery-overlay"><h3>Campaign khác</h3></div>
+        </a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3f4c38164680747.69f7df4ac8378.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff9630164680747.69f7df4ac7f34.png" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/0a8076164680747.69f7df4ac87a4.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/8991da164680747.69f773ce17785.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/71f3a1164680747.69f773ce18152.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/94cefd164680747.69f79af46b171.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d5e8dc164680747.69f79af46ad84.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/17ad26164680747.69f79af46b564.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/4a20f4164680747.69f79af46a8fe.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/be865f164680747.69f77793cf062.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/f41599164680747.63fb49406d532.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/055e7a164680747.69f77793cf551.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9f00d1164680747.69f79af509579.jpg" data-caption="<b>Chuỗi sự kiện 8/3 và 20/10:</b> Xây dựng, lên ý tưởng cho chương trình từ 2022 đến 2025" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d77259164680747.69f79af507faa.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ca38e7164680747.69f79af508b92.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b6cd22164680747.69f79af508fb4.jpg" style="display:none;"></a>
+        <a data-fancybox="album5" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9cb3e5164680747.69f79af508766.jpg" style="display:none;"></a>
+      </div>
+
+      <div class="grid-item anim-item item-6">
+        <a data-fancybox="album6" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/05d96f164680747.69f9c51b1b39e.jpg" data-caption="<b>Plugin quản ký asset:</b> Quản lý phân loại các tài nguyên có sẵn trên thiết bị" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cb0eb1164680747.69f97787e755b.jpg">
+          <div class="gallery-overlay"><h3>Plugin Photoshop</h3></div>
+        </a>
+        <a data-fancybox="album6" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/744d4e164680747.69f9c51b1afaa.jpg" data-caption="<b>Plugin quản lý layer:</b> Dọn dẹp, unlink smartobject, đặt tên nhanh..." style="display:none;"></a>
+        <a data-fancybox="album6" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/6e7785164680747.69f9c51b1bb5d.jpg" data-caption="<b>Plugin tạo guide:</b> Quản lý, lưu guide giúp tạo nhanh safe zone" style="display:none;"></a>
+        <a data-fancybox="album6" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/360c1b164680747.69f9c51b1b773.jpg" data-caption="<b>Plugin artboard:</b> thay đổi kích thước artboard theo điểm neo, sắp xếp artboard theo thứ tự" style="display:none;"></a>
+      </div>
+      <div class="grid-item anim-item item-7">
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/0c179f164680747.69f804df1b7b8.jpg" data-caption="<b>Tết:</b> Xây dựng concept cho chương trình từ 2022 đến 2025" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8d1d86164680747.69f95782f0633.jpg">
+          <div class="gallery-overlay"><h3>Tết</h3></div>
+        </a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d56c57164680747.69f804df1bd99.png" style="display:none;"></a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ee5dac164680747.69f804df1b18b.jpg" style="display:none;"></a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c0e7a5164680747.69f804df1aa63.jpg" style="display:none;"></a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/accc69164680747.63fb1c1337f8d.jpg" style="display:none;"></a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/2f6cfe164680747.63fb1c1334437.jpg" style="display:none;"></a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/31520e164680747.63fb1c13370d4.jpg" style="display:none;"></a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/5ad84e164680747.63fb1c13326a5.jpg" style="display:none;"></a>
+        <a data-fancybox="album7" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/47be01164680747.63fb1c133625b.jpg" style="display:none;"></a>
+      </div>
+      <div class="grid-item anim-item item-8">
+        <a data-fancybox="album8" href="https://www.youtube.com/watch?v=bRrRNFo1jbg" data-caption="<b>Đồ án:</b> Làm nhóm trưởng các đồ án trong trường học, thực hiện và hướng dẫn toàn bộ quy trình thực hiện đồ án" class="gallery-item">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/806193164680747.69f77ce0b0e2b.jpg">
+          <div class="gallery-overlay"><h3>Đồ án</h3></div>
+        </a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/647173164680747.69f77ce0b24e7.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/23b7a1164680747.69f77ce0b3014.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3b585a164680747.69f77ce0b07de.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/219a2e164680747.69f77ce0b1440.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4129a6164680747.69f77ce0b3582.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9f8598164680747.69f77ce0b3b07.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5544c3164680747.69f77ce0b19d1.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a870cf164680747.69f77ce0b6178.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9fd91164680747.69f77ce0b408a.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/08b72a164680747.69f77ce0b1f6a.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3a07ec164680747.69f77ce0b4633.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2fa8ad164680747.69f77ce0b66f4.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5547ff164680747.69f77ce0b4bb0.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/061a50164680747.69f77ce0b6ca1.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/52b377164680747.69f77ce0b723c.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d1bab8164680747.69f77ce0b50ea.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/30bc84164680747.69f77ce0b56e2.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6747cd164680747.69f77ce0b77cc.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3b3c5f164680747.69f77ce0b8926.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/692af2164680747.69f77ce0b8e77.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0d338e164680747.69f77ce0b7dfe.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5885bc164680747.69f77ce0b839d.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ca454f164680747.69f77ce0b5c2d.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d814d4164680747.69f77ce0bc1d5.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/95f77c164680747.69f77ce0b9d86.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ca434d164680747.69f77ce0bbbf5.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/152bb2164680747.69f77ce0b92f6.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e09f8d164680747.69f77ce0b97fc.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f19e62164680747.69f77ce0bb7ce.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/520765164680747.69f77ce0ba99b.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aecb01164680747.69f77ce0ba2f9.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/eae21e164680747.69f77ce0bb33d.jpg" style="display:none;"></a>
+        <a data-fancybox="album8" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/56a256164680747.69f77ce0bade1.jpg" style="display:none;"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="sec-3">
+  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9ab3fd164680747.69f84c42d69c9.png" id="s4-cursor-img" alt="Cursor Follower">
+
+  <div id="copy-notify">
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5a8bff164680747.69f8a98d06ef2.png" alt="Copied!">
+  </div>
+
+  <div class="s4-container">
+    <div class="s4-card anim-item" data-note="phunghongquan94@gmail.com">
+      <div class="s4-shadow"></div>
+      <div class="s4-wrapper">
+        <div class="s4-inner">
+          <div class="s4-front"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0120e9164680747.69fa03d0f3437.jpg"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s4-card anim-item" data-note="0332756233">
+      <div class="s4-shadow"></div>
+      <div class="s4-wrapper">
+        <div class="s4-inner">
+          <div class="s4-front"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f2569c164680747.69fa03d0f2d0e.jpg"></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.linkedin.com/in/h%E1%BB%93ng-qu%C3%A2n-ph%C3%B9ng-9a44902b0/" target="_blank" class="s4-card anim-item" style="display: block; text-decoration: none;">
+      <div class="s4-shadow"></div>
+      <div class="s4-wrapper">
+        <div class="s4-inner">
+          <div class="s4-front"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0fda06164680747.69fa03d0f2601.jpg"></div>
+          </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<svg style="position:fixed; top:100vh; left:0; width:0; height:0;">
+  <defs>
+    <filter id="blob">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10" result="blob"></feColorMatrix>
+    </filter>
+    
+    <filter id="blob-mobile">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="blob"></feColorMatrix>
+    </filter>
+  </defs>
+</svg>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script src="main.js"></script>
+</body>
 </html>
